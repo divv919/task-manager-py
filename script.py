@@ -33,6 +33,7 @@ def updateTask(tasks):
 
 
     if  (index <1 or index> len(tasks)):
+        print(index)
         print("invalid index")
         return
 
@@ -51,9 +52,13 @@ def addNewTask(tasks):
 
 def deleteTask(tasks):
     getAllTasks(tasks)
-    index = print("Type the task index to update")
+    try:
+        index = int(input("Type the task index to update"))
+    except ValueError :
+        print("Enter a number")
+        return
 
-    if type(index) != int or (index <=1 or index> len(tasks)):
+    if  (index <1 or index> len(tasks)):
         print("invalid index")
         return
 
